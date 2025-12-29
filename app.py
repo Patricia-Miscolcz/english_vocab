@@ -43,4 +43,7 @@ def index():
     return render_template("index.html", words=words)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
+    #host="0.0.0.0" → permite que o Render acesse o app de fora
+    #port=int(os.environ.get("PORT", 5000)) → usa a porta que o Render fornece

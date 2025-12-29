@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu dicionário</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>Meu vocabulário de inglês</h2>
+
+<form method="post">
+
+  <input type="text" name="word" placeholder="Palavra em inglês" required>
+  <input type="text" name="meaning" placeholder="Significado" required>
+  <textarea name="example" placeholder="Exemplo"></textarea>
+  <button type="submit">Salvar</button>
+  
+</form>
+
+<hr>
+
+{% for w in words %}
+  <p>
+    <b>{{ w.word }}</b> – {{ w.meaning }}<br>
+    <i>{{ w.example }}</i>
+  </p>
+{% endfor %}
+
+</body>
+</html>
